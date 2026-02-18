@@ -1,0 +1,28 @@
+############################################
+# Router Configuration - Telnet Lab
+# Device: R1-Telnet
+############################################
+
+enable
+configure terminal
+
+! Set Hostname
+hostname R1-Telnet
+
+! Set Enable Password
+enable password cisco
+
+! Configure Domain Name
+ip domain-name cisco.com
+
+! Create Local User
+username Admin password cisco
+
+! Configure VTY Lines for Telnet
+line vty 0 15
+ login local
+ transport input telnet
+ exit
+
+end
+write memory
